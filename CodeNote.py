@@ -53,6 +53,7 @@ math.tan(x) # Возвращает тангенс x в радианах
 math.tanh(x) # Возвращает гиперболический тангенс x в радианах
 math.trunc(x) # Возвращает целую часть числа x в виде значения типа int; то же самое, что и int(x)
 random.random() #Math.random();
+random.randrange(1, 10)
 random.choice([num, num2, num3]) #choice one from gave
 random.randint(1, 6) # choice one between 1 - 6
 decimal.Decimal(number)
