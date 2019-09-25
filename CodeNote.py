@@ -9,6 +9,7 @@ import calendar
 import sys
 import decimal
 import unicodedata
+import collections
 
 from importlib import reload
 from module import * # import all props like global variables
@@ -172,6 +173,12 @@ del arr # delete list
 del arr[0] # delete index
 arr.clear() # empties list
 arr.index('element') # return index of first founded element
+var1, *var2, var3 = [1, 2, 2, 2, 3] # var = 1, var2 = [2, 2, 2], var3 = 3
+[expression for item in iterable]
+[expression for item in iterable if condition]
+codes = [s + z + c for s in "MF" for z in "SMLX" for c in "BGW"
+            if not (s == "F" and z == "X")]
+
 
 input('Question'); # prompt();
 print('Avswer', end="value")
@@ -278,7 +285,12 @@ type(obj) # shoq type of object
 1, # for create one tuple
 () # create empty tuple
 tuple(obj) # convert to tuble
-(1, 2, 3, 4).count('elem') # Returns the number of times a specified value occurs in a tuple
+(1, 2, 3, 4).count('elem', start, end) # Returns the number of times a specified value occurs in a tuple
+(1, 2) + ('str',) # create new tuple (1, 2, 'str')
+
+tup = collections.namedtuple('Name', 'index00Name index01Name index02Name')
+variable2 = tup('index00', 'index01', 'index02') # Name(index00Name= index00, index01Name= index01, index02Name=index02)
+variable2.index00Name # index00
 
 None # like null and like undefined
 

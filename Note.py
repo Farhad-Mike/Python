@@ -75,4 +75,6 @@ In interactive mode, the last printed expression is assigned to the variable _.
 You cannot convert complex numbers into another number type.
 
 Once a set is created, you cannot change its items, but you can add new items.
+
+Кортежи могут сравниваться с помощью стандартных операторов сравнения (<, <=, ==, !=, >=, >), при этом сравнивание производится поэлементно (и рекурсивно, при наличии вложенных элементов, таких как кортежи в кортежах).
 #
