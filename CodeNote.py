@@ -340,3 +340,6 @@ setter.union(newSetter) # join sets
 setter.update(newSetter) # join sets. Both union() and update() will exclude any duplicate items.
 del setter # delete set
 key in setter # True/False
+
+dictionary = {}
+dict.pop()
