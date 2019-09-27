@@ -92,7 +92,7 @@ str.rindex(str, [start],[end]) # Поиск подстроки в строке. 
 str.replace(t, u, n) #will not change the str. Возвращает копию строки s, в которой каждое (но не более n, если этот аргумент определен) вхождение подстроки t замещается подстрокой u
 str.split(t, n) # Возвращает список строк, выполняя разбиение строки s не более чем n раз по подстроке t. Если число n не задано, разбиение выполняется по всем найденным подстрокам t. Если подстрока t не задана, разбиение выполняется по пробельным символам. Для выполнения разбиения строки, начиная с правого края, используйте метод str.rsplit – этот метод имеет смысл применять, когда задано число разбиений n, которое меньше максимального числа возможных разбиений
 str.rsplit(t, n)
-str.splitlines(bool) # Возвращает список строк, выполняя разбиение строки s по символам перевода строки (\n), удаляя их, если в аргументе f не задано значение True
+str.splitlines(bool) # Возвращает список строк, выполняя разбиение строки s по символам перевода строки (\n), удаляя их, если в аргументе f задано значение False
 str.upper() #str.toUpperCase();
 str.lower()
 str.isalpha() #	Состоит ли строка из букв-
@@ -109,7 +109,6 @@ str.istitle() # Начинаются ли слова в строке с загл
 str.startswith(str) #Начинается ли строка S с шаблона str
 str.endswith(str) #Заканчивается ли строка S шаблоном str
 str.join(arr) # Сборка строки из arr с разделителем str
-str.isdigit() # check is that a digit
 str.lstrip('[]<>/sym') # delete space from start
 str.rstrip('[]<>/sym') # delete space from end
 str.strip('[]<>/sym') # delete spaces from start and end. Удаляет каждый из найденный символов если использовать с аргументом
@@ -327,5 +326,6 @@ setter.pop()
 setter.clear() # clear all set. Make them empty
 setter.union(newSetter) # join sets
 setter.update(newSetter) # join sets. Both union() and update() will exclude any duplicate items.
+set.isdisjoint()
 del setter # delete set
 key in setter # True/False
