@@ -44,12 +44,10 @@ math.isnan(x) # Возвращает True, если значение x типа 
 math.ldexp(m, e) # Возвращает m × 2e – операция, обратная math.frexp()
 math.log(x, b) # Возвращает logbx, аргумент b является необязательным и по умолчанию имеет значение math.e
 math.log10(x) # Возвращает log10x
-math.log1p(x) # Возвращает loge(1+x); дает точные значения, даже когда значение x близко к 0
-math.modf(x) # Возвращает дробную и целую часть числа x в виде двух значений типа float
+math.log1p(x) # Возвращает log(1+x); дает точные значения, даже когда значение x близко к 0
 math.radians(d) # Преобразует число d, типа float, из градусов в радианы
 math.sin(x) # Возвращает синус x в радианах
 math.sinh(x) # Возвращает гиперболический синус x в радианах
-math.fsum(i) # Возвращает сумму значений в итерируемом объекте i в виде числа типа floata
 math.tan(x) # Возвращает тангенс x в радианах
 math.tanh(x) # Возвращает гиперболический тангенс x в радианах
 math.trunc(x) # Возвращает целую часть числа x в виде значения типа int; то же самое, что и int(x)
@@ -82,7 +80,7 @@ str[2::2]
 str * 3 #'strstrstr' make concatination of string
 #above code can be used not for only str. also for list and for cortages
 
-
+STOPED THERE AND SHOULD LERAN BELOW THIS LINE
 unicodedata.normalize('NFKD', str) # str.normalize();
 str + 'str' #'someStringstr', str is not changes
 str.find(str, [start],[end]) # Поиск подстроки в строке. Возвращает номер первого вхождения или -1
