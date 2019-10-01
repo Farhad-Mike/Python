@@ -10,6 +10,8 @@ import sys
 import decimal
 import unicodedata
 import collections
+import tkinter
+import os
 
 from importlib import reload
 from module import * # import all props like global variables
@@ -147,7 +149,9 @@ chr(число) # String.fromCodePoint();
 
 
 list(str) # create list from string
-arr = [c * 2 for c in ‘spam’] # Дублирование символов в строке  [‘ss’, ‘pp’, ‘aa’, ‘mm’]
+[expression for item in iterable]
+[expression for item in iterable if condition]
+arr = [_ * 2 for _ in ‘spam’] # Дублирование символов в строке  [‘ss’, ‘pp’, ‘aa’, ‘mm’]
 arr = [M[i][i] for i in [0, 1, 2]] # Выборка элементов диагонали матрицы
 arr = [row[2] for row in arr] # create new array and add to them from all multidimensional arrays indexed elem
 arr = [row[2] for row in arr if condition] #if condition return true then return elem
@@ -172,8 +176,7 @@ del arr[0] # delete index
 arr.clear() # empties list
 arr.index('element') # return index of first founded element
 var1, *var2, var3 = [1, 2, 2, 2, 3] # var = 1, var2 = [2, 2, 2], var3 = 3
-[expression for item in iterable]
-[expression for item in iterable if condition]
+
 codes = [s + z + c for s in "MF" for z in "SMLX" for c in "BGW"
             if not (s == "F" and z == "X")]
 
@@ -196,6 +199,7 @@ else:
 X and Y  # X && Y
 X or Y  # X || Y
 not X  # !X
+x is y # x == y
 
 A = Y if X else Z
 
@@ -224,7 +228,7 @@ abs(num) # absolute number
 divmod(x, y) # like (x // y, x % y)
 pow(x, y[, z]) # like pow(x, y) % z
 max(num, num, num) # Math.max(); or max(arr)
-max(num, num, num) # Math.min(); or min(arr)
+min(num, num, num) # Math.min(); or min(arr)
 round(num, n) # Math.round(num); argument n show how much numbers should be after dot
 
 x | y # Побитовое или
@@ -341,3 +345,11 @@ key in setter # True/False
 
 dictionary = {}
 dict.pop()
+
+
+# IMPORT TKINTER LIB
+
+win = tkinter.Tk()
+win.title('Title')
+win.resizable(True, True)
+win.mainloop()
