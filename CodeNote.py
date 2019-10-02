@@ -138,7 +138,7 @@ coord = {'latitude': '37.24N', 'longitude': '-115.81W'}
 'Coordinates: {latitude}, {longitude}'.format(**coord) # 'Coordinates: 37.24N, -115.81W'
 ###
 help(str.replace) #show help for all methods
-
+ 
 
 --5 # 5
 20 // 6 #how much 6 in 20?
