@@ -1,3 +1,6 @@
-import os
+a = (1, 2, 3, 4, 5)
 
-print(os.path.())
+b = enumerate(iter(a))
+
+print(b)
+

@@ -87,9 +87,11 @@ def functionName(arguments):
 range(startNum, stopNum, step) # не включительно stopNum
 range(stopNum) # startNum = 0, step = 1
 
-def someFunc:
+def someFunc():
     global x
     x = 'Global variable' #create inside function a global variable or use for change the global variable
+
+iter(var) # создает итерируемы объект из коллекции
 
 
 
