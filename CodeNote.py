@@ -94,4 +94,11 @@ iter(var) # создает итерируемы объект из коллекц
 
 
 
+# OPEN
 
+fin = open('filename and path', encoding='utf8') # open and read file
+fout = open('filename and path', 'w', encoding='utg8') # open/create and write file
+fin.read() # read all file like one line
+fin.readlines() # read file like a few lines
+fout.write('string') # write a new information to file. After information we can add \n.
+fout.close() # close file and empty buffer.
