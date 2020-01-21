@@ -6,6 +6,7 @@ dict.pop()
 dictionary.items() # выводит список множеств (ключ, значение)
 dictionary.keys() # return keys
 dictionary.values() # return key's value
+dictionary.copy() # copy 'dict'
 
 dictionary[somekey] = dictionary.get('key', 0) # есть есть ключ то верни его значение, если его нет то запиши туда 0
 

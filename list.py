@@ -12,7 +12,7 @@ arr.extend(arr2) # like arr.push(...arr2)
 arr.pop()
 arr.insert(position, newElem) #add new elem to the position
 arr.remove(value) #find and delete the value
-arr.sort()
+arr.sort() # Принимает те же аргументы что и функция sorted()
 arr.reverse()
 arr.copy() # will copy list
 arr * 3 #repeat inner elements a few times

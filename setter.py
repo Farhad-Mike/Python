@@ -7,5 +7,6 @@ setter.pop()
 setter.clear() # clear all set. Make them empty
 setter.union(newSetter) # join sets
 setter.update(newSetter) # join sets. Both union() and update() will exclude any duplicate items.
+setter.copy() # copy 'set'
 del setter # delete set
 key in setter # True/False
