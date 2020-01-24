@@ -1,5 +1,6 @@
-i = [4, 5, 3, 2, 5, 1]
-s = [4, 5, 3, 2, 5, 1]
+class myException(Exception): pass
 
 
-print(i is s)
+
+if True:
+    raise myException('f')

@@ -119,3 +119,12 @@ zip(iterator1, iterator2, ... iteratorN) # Функция zip() принимае
 reversed(x) # желательно сделать преобразование типа после reversed
 sorted(x, key=func) # Элементы итератора должны бить одного типа. Каждый итерируемый объект будет проходить через функцию а потом сортироваться. Функция не изменяет конечный итератор
 sorted(x, reverse=True) 
+
+
+raise errorName(args) # get an except, args will be showed
+raise # get active except or empty
+
+
+class exceptionName(baseException): pass # create yourself exception. 
+
+isinstance(obj, obj2) # return True if first obj is the same type as obj2
