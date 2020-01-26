@@ -128,3 +128,13 @@ raise # get active except or empty
 class exceptionName(baseException): pass # create yourself exception. 
 
 isinstance(obj, obj2) # return True if first obj is the same type as obj2
+
+s = lambda arguments: expression # Обычно используют позиционные аргументы хотя допускаются и другие как в обычных def функциях. Сами аргументы не обязательны
+
+assert boolean_expression, optional_expression # Используется разработчиками, а не для конечных пользователей. Если boolean_expression вернет False то возбуждает исключение AssertionError c необязательным аргументом optional_expression.
+
+python -0 filename.py Or PYTHONOPTIMIZE = 'O' # запустить игнорируя assert 
+python -00 filename.py # запустить игнорируя строки документирования и assert
+
+import xml.sax.saxutils # содержит удобную функцию xml.sax.saxutils.escape(), которая принимает строку и возвращает эквивалентную ей строку, в которой специальные символы языка разметки HTML («&», «<» и «>») замещаются их эквивалентами («&amp;», «&lt;» и «&gt;»).
+
