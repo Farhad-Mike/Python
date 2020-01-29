@@ -97,9 +97,10 @@ iter(var) # создает итерируемы объект из коллекц
 # OPEN
 fin = open('filename and path', encoding='utf8') # open and read file
 fout = open('filename and path', 'w', encoding='utg8') # open/create and write file
+append = open('filename and path', 'a', encoding='utf8') # open/create and append in file
 fin.read() # read all file like one line
 fin.readlines() # read file like a few lines
-fout.write('string') # write a new information to file. After information we can add \n.
+fout.write('string') # write a new information in a file/append a new information in a file. After information we can add \n.
 fout.close() # close file and empty buffer.
 
 iterabelObj = iter(x) # Первый способ: возвращает итератор для данного объекта или возбуждает исключение StopIteration. Второй способ: передается функция/метод итерируемого объекта и специальное значение, при каждом шаге итерирования вызывается указанная функция и если значение функции не равно специальному значению то возвращается результат, в противном случае возбуждается StopIteration.
@@ -138,3 +139,4 @@ python -00 filename.py # запустить игнорируя строки до
 
 import xml.sax.saxutils # содержит удобную функцию xml.sax.saxutils.escape(), которая принимает строку и возвращает эквивалентную ей строку, в которой специальные символы языка разметки HTML («&», «<» и «>») замещаются их эквивалентами («&amp;», «&lt;» и «&gt;»).
 
+funcName.__doc__ # return document of a function
