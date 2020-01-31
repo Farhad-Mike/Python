@@ -140,3 +140,9 @@ python -00 filename.py # запустить игнорируя строки до
 import xml.sax.saxutils # содержит удобную функцию xml.sax.saxutils.escape(), которая принимает строку и возвращает эквивалентную ей строку, в которой специальные символы языка разметки HTML («&», «<» и «>») замещаются их эквивалентами («&amp;», «&lt;» и «&gt;»).
 
 funcName.__doc__ # return document of a function
+
+print('string', file=filename) # Можно записывать информацию в файл через print()
+
+sys.stdout = io.StringIO() # весь вывод будет записоваться как строка в объект созданный при помощи io.StringOI
+sys.stdout = sys.__stdout__ # восстановить обычную работу объекта
+sys.stdout.getvalue() # вернуть все значение записаное в этот объект (т.е в io.StringIO())
