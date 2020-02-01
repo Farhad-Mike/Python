@@ -1,6 +1,10 @@
 script.py > file.txt # перенаправить весь вывод программы в файл
 script.py < file.dat # or file.txt
 
+import bisect # содержит функции поиска в отсортировачных эелементах, а так же функции вставки с сохранением порядка.
+import weakref # содержит средства создания слабых ссылок, как обычные ссылки но, если единственная ссылка на объект – слабая ссылка, то такой объект может считаться готовым к утилизации.
+
+
 from importlib import reload
 from module import * # import all props like global variables
 

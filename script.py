@@ -1,1 +1,3 @@
-print(int('.0f', 16))
+import datetime
+
+print(datetime.datetime(2001))
