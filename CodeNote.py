@@ -154,6 +154,8 @@ def someFunc():
 iter(var) # создает итерируемы объект из коллекции
 
 
+expression1 if boolExpression else expression2 # if bool_expression is True then return expression1 otherwise return expression2
+
 
 # OPEN
 fin = open('filename and path', encoding='utf8') # open and read file
