@@ -1,13 +1,21 @@
-<<<<<<< HEAD
-=======
+class Machine(object):
+    def __init__(self, power = 300, weight = 1000, color = 'Blue', carLight = 'white'):
+        self.power = power
+        self.weight = weight
+        self.color = color
+        self.light = carLight
+    
+    @property
+    def light(self):
+        return self.__carLight
+    
+    @light.setter
+    def light(self, carLight):
+        assert carLight in {'black', 'purple', 'blue', 'red', 'yellow', 'green', 'white'}, 'The selected color can"t be'
+        self.__carLight = carLight
+    
 
-def er():
-    return ValueError
+car = Machine(2000, 4.5, 'black', 'gogr')
 
-for _ in [1, 2, ValueError]:
-    print(_)
-    int(_)
-    er()
-else:
-    print('done ')
->>>>>>> 30ad250835297dd1f6a2944dbd9c1032ae61d10b
+print(car.color, car.power, car.weight, car.carLight)
+

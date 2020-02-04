@@ -1,8 +1,9 @@
 import collections
 
-tup = collections.namedtuple('Name', 'index00Name index01Name index02Name')
-variable2 = tup('index00', 'index01', 'index02') # Name(index00Name= index00, index01Name= index01, index02Name=index02)
-variable2.index00Name # index00
+Tup = collections.namedtuple('TUP', 'x y z')
+coordinate = Tup(2, 3, 4) # TUP(x=2, y=3, z=4)
+coordinate = coordinate._replace(z = 5) # TUP(x=2, y=3, z=5)
+
 dic = collections.defaultdict(func) # will return the argumented function if key not exist
 collections.UserDict 
 collections.UserList

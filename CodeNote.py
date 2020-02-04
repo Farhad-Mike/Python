@@ -189,9 +189,60 @@ raise errorName(args) # get an except, args will be showed
 raise # get active except or empty
 
 
-class exceptionName(baseException): pass # create yourself exception. 
+class exceptionName(baseException): pass # create your Class
 
-isinstance(obj, obj2) # return True if first obj is the same type as obj2
+class ClassName(parent):            # self это как this. self это ссылка на сам объект (самого себя)
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    @property                       # благодаря @property можно будет вызывать obj.funcName без скобок (Это как set and get из JS)
+    def funcName(self):
+        x = super().__eq__(y)
+        suite
+
+
+
+class ClassName(parent):               # Желательно всегда начинать с super(). Тут super() имеет такое же значение как в JS
+    def __init__(self, x=0 y=0):
+        super().__init__(x, y)
+        suite
+
+
+################################################################################################
+class Machine(object):
+    def __init__(self, power = 300, weight = 1000, color = 'Blue', signal = 'Hight'):
+        self.power = power
+        self.weight = weight
+        self.color = color
+        self.signal = signal
+
+    @property
+    def signal(self):
+        return self.__signal
+
+    @signal.setter
+    def signal(self, signal):
+        assert signal.title() in {'Hight', 'Normal', 'Low'}, 'It can"t be used as a signal'
+        self.__signal = signal
+
+    @property
+    def light(self):
+        return self.__carLight
+    
+    @light.setter # also exist light.getter, light.deleter
+    def light(self, carLight):
+        assert carLight in {'black', 'purple', 'blue', 'red', 'yellow', 'green'}, 'The selected color can"t be'
+        self.__carLight = carLight
+
+car = Machine(2000, 4.5, 'black', 'Low')
+car.light = 'black'
+print(car.light) # return 'black'
+################################################################################################
+
+
+
+isinstance(obj, obj2/(obj3, obj4, obj5)) # return True if first obj is the same type as obj2/Class
 
 s = lambda arguments: expression # Обычно используют позиционные аргументы хотя допускаются и другие как в обычных def функциях. Сами аргументы не обязательны
 
@@ -212,3 +263,13 @@ sys.stdout.getvalue() # вернуть все значение записано�
 
 fh = urllib.request.urlopen("http://www.python.org/index.html") # Загрузка файлов из Интернета
 html = fh.read().decode("utf8")
+
+repr(x) # shor representation form
+eval(moduleName, obj) # Обратная противоположность repr(x). и вернет тот объект что передавался в repr()
+
+hash(x) # Работает только с хешируемыми объектами
+
+func.__module__ # Вернет имя модуля с которого импортировался данный объект
+
+property(x, y, z, k) # Используется внутри класса. Функция-декоратор может принимать до четырех аргументов: функцию чтения, функцию записи, функцию удаления и строку документирования.
+
