@@ -247,6 +247,8 @@ print(car.light) # return 'black'
 self.__class__.__name__ # Вернет класс самого объекта от которого создали
 
 isinstance(obj, obj2/(obj3, obj4, obj5)) # return True if first obj is the same type as obj2/Class
+hasattr(obj, 'attr') # Есть ли такой атрибут/свойство у объекта
+
 
 s = lambda arguments: expression # Обычно используют позиционные аргументы хотя допускаются и другие как в обычных def функциях. Сами аргументы не обязательны
 
