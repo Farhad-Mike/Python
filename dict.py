@@ -14,3 +14,6 @@ dictionary[somekey] = dictionary.get('key', 0) # есть есть ключ то
 dictionary = collections.defaultdict(func) # вызовет эту функцию при обращении к несуществующему ключю
 
 defdict = collections.defaultdict(str) # return '' when called not existed key. You can use any default object type func (example: str, int, dict, float and s.)
+dict.update()
+dict.fromkeys() # Этот метод используется для создания нового словаря на основе итерируемого объекта. Каждый элемент итерируемого объекта становится ключом, а значением каждого ключа становится None или значение аргумента value.
+dict.popitem() # удаляет и возвращает случайный элемент ключзначение из словаря.
