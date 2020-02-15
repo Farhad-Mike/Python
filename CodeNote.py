@@ -161,6 +161,7 @@ expression1 if boolExpression else expression2 # if bool_expression is True then
 fin = open('filename and path', encoding='utf8') # open and read file
 fout = open('filename and path', 'w', encoding='utg8') # open/create and write file
 append = open('filename and path', 'a', encoding='utf8') # open/create and append in file
+fh.seek(position) # указатель позиции в файле перемещается в начало, чтобы следующая операция чтения начала чтение файла с указанной позиции
 fin.read() # read all file like one line
 fin.readlines() # read file like a few lines
 fout.write('string') # write a new information in a file/append a new information in a file. After information we can add \n.
