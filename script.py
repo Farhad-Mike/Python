@@ -1,18 +1,6 @@
-class Family(object):
-    def __init__(self, name, surname):
-        self.__name = name
-        self.__surname = surname
-    
-    @property
-    def name(self):
-        return self.__name
-    
-    @name.setter
-    def name(self, name):
-        assert isinstance(name, str)
-        self.__name = name
-    
-farhad = Family(63, 'Maharramov')
+import xml.dom.minidom
 
-print(farhad.name)
-print(farhad.name)
+dom = xml.dom.minidom.parse('xml')
+element = dom.getElementsByTagName('incident')
+print(element[0].childNodes[0].data)
+print(element[0].childNodes[0].nodeType)
