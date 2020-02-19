@@ -59,7 +59,7 @@ import email # Отдельные сообщения электронной по
 
 
 
-
+__import__('moduleName') # The another variant for import module
 
 
 from importlib import reload
@@ -67,7 +67,7 @@ from module import * # import all props like global variables
 
 importlib.reload(fileName)
 #script.pyw will play the script without open DOS window. (When file dbclicked)
-dir(importlib) # show all attribute from obj
+dir(importlib) # show all attributes and local methods from obj
 exec(open('moduleName').read()) #like from, import module without need in future use importlib.reload()
 
 
@@ -162,7 +162,7 @@ fin = open('filename and path', encoding='utf8') # open and read file
 fout = open('filename and path', 'w', encoding='utg8') # open/create and write file
 append = open('filename and path', 'a', encoding='utf8') # open/create and append in file
 fh.seek(position) # указатель позиции в файле перемещается в начало, чтобы следующая операция чтения начала чтение файла с указанной позиции
-fin.read() # read all file like one line
+fin.read(N) # read all file like one line.  It reads the given no. of bytes (N) as a string. If no value is given, then it reads the file till the EOF.
 fin.readlines() # read file like a few lines
 fout.write('string') # write a new information in a file/append a new information in a file. After information we can add \n.
 fout.close() # close file and empty buffer.
@@ -314,3 +314,43 @@ def startGenerator():
 
     exec('code', context, locals) # code - передаётся строковый код который будет преобразован в нормальный формат. context - словарь в который будет записана функция из code и так же через context мы передаем внешние переменные. locals - локальные переменные.
     obj = globals() # Возвращает ссылку на словарь в котором есть ссылки на все глобальные переменные. А чтобы exec() не записывала функции в глобальную область видимости нужно context = globals().copy()
+
+delattr(obj, name) # Remove attribute from object
+setattr(obj, name, val) # Set value to attribute with name
+getattr(obj, name, val) # Get attribute with name or return val if attr doesn't exist
+hasattr(obj, name) # Возвращает True, если объект obj имеет атрибут с именем name
+vars(obj) # Возвращает контекст объекта obj в виде словаря или локальный контекст, если аргумент obj не определен
+
+def sum(a, b):
+    def i(c):
+        nonlocal b # будет искать по стеку вверх эту переменную
+        b + 1
+
+
+
+
+
+
+############################################################### CREATE DECORATOR
+def decorator_name(function):
+    def wrapper(*args, **kwargs):
+        result = function(*args, **kwargs)
+        assert result >= 0, function.__name__ + "() result isn't >= 0"
+        return result
+    wrapper.__name__ = function.__name__
+    wrapper.__doc__ = function.__doc__
+    return wrapper
+
+### OR ###
+def decorator_name(function):
+    @functools.wraps(function) # functools is a module 'import functools'
+    def wrapper(*args, **kwargs):
+        result = function(*args, **kwargs)
+        assert result >= 0, function.__name__ + "() result isn't >= 0"
+        return result
+    return wrapper
+
+@decorator_name
+def discriminant(a, b, c):
+    return (b ** 2) - (4 * a * c)
+###############################################################

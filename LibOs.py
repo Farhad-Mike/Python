@@ -18,6 +18,7 @@ os.path.join() # принимает произвольное число стро
 os.path.exists() 
 os.path.isdir()
 os.path.getmtime() # когда произошло последнее изменение файла
+os.path.splitext(filename) # Split the extension from a pathname. Returns "(root, ext)"; ext may be empty.
 os.access() # может использоваться для определения наличия файла или его доступности для чтения или записи.
 os.stat() # возвращает различные сведения о файле или каталоге, такие как режим доступа, время последнего обращения и размер.
 os.mkdir() # create calatog
