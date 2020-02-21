@@ -353,4 +353,26 @@ def decorator_name(function):
 @decorator_name
 def discriminant(a, b, c):
     return (b ** 2) - (4 * a * c)
+
+### OR ### Parameted decorator
+
+def bounded(minimum, maximum):
+    def decorator(function):
+        @functools.wraps(function)
+        def wrapper(*args, **kwargs):
+            result = function(*args, **kwargs)
+            if result < minimum:
+                return minimum
+            elif result > maximum:
+                return maximum
+            else:
+                return result
+        return wrapper
+    return decorator
+
+@bounded(0, 100)
+def percent(amount, total):
+    return (amount / total) * 100
 ###############################################################
+
+def functionName(par1 : exp1, par2 : exp2, ..., parN : expN) -> rexp: suite
