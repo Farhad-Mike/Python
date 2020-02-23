@@ -45,6 +45,7 @@ import poplib # for POP3 protocol
 import mailbox # Возможность доступа к почтовым ящикам различных форматов
 import email # Отдельные сообщения электронной почты (включая сообщения, состоящие из нескольких частей) могут создаваться и обрабатываться
 import builtins # Содержит все встроенные функции builtins.print() и эти функции можно переназначать
+import contextlib # 
 
 
 
@@ -385,3 +386,14 @@ def percent(amount, total):
 ###############################################################
 
 def functionName(par1 : exp1, par2 : exp2, ..., parN : expN) -> rexp: suite
+
+try:
+    with open(filename) as fh: # Менеджер контекста (open(filename)) при входе вызывает __enter__(), когда выйдет из with (вне зависимости от причины) вызовет функцию __exit__().
+        for line in fh:
+            makeSomething(line)
+except(Error) as err:
+    doSomething(err)    
+
+with contextlib.nested(open(filename), open(newfile, 'w')) as (fin, fout): # Библеотека позволяет не ломая дизайн кода использовать несколько менеджеров концекста в одной инструкции with
+    for line in fin:
+        fout.write(line)

@@ -39,3 +39,8 @@ __setattr__(self, name, value) # obj.name = value
 __delattr__(self, name) # del obj.name
 __dir__(self) # dir(obj) Возвращает список имен атрибутов объекта obj
 __getattribute__(self, name) # obj.name Вызывается при первом же обращении к obj. Избежать рекурсии часто удается с помощью вызовов super().__getattribute__() или object.__getattribute__(). *Советуют не трогать этот метод, может постродать производительность
+__enter__(self) # Enter to context manadger
+__exit__(self, exception_type, exception_value, exception_tb) # Exit from context manadger. Возвращаемое значение метода __exit__() используется интерпретатором, чтобы определить, следует ли продолжить распространение исключения, если оно возникло. Значение True свидетельствует о том, что метод выполнил обработку исключения и дальнейшее распространение исключения не требуется.
+__get__(self, instance, owner) #
+__set__(self, instance, value) #
+__delete__() #
