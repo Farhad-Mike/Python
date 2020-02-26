@@ -325,6 +325,10 @@ def startGenerator():
     exec('code', context, locals) # code - передаётся строковый код который будет преобразован в нормальный формат. context - словарь в который будет записана функция из code и так же через context мы передаем внешние переменные. locals - локальные переменные.
     obj = globals() # Возвращает ссылку на словарь в котором есть ссылки на все глобальные переменные. А чтобы exec() не записывала функции в глобальную область видимости нужно context = globals().copy()
 
+
+
+localVariables = locals() # Will return dict with local variables. Example in funciton
+
 delattr(obj, name) # Remove attribute from object
 setattr(obj, name, val) # Set value to attribute with name
 getattr(obj, name, val) # Get attribute with name or return val if attr doesn't exist
