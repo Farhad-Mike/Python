@@ -217,7 +217,7 @@ class ClassName(parent):            # self это как this. self это сс�
 
 class ClassName(parent):               # Желательно всегда начинать с super(). Тут super() имеет такое же значение как в JS
     def __init__(self, x=0 y=0):
-        super().__init__(x, y)
+        super().__init__(x, y) # Do not need self argument
         suite
 
 
@@ -401,3 +401,4 @@ except(Error) as err:
 with contextlib.nested(open(filename), open(newfile, 'w')) as (fin, fout): # Библеотека позволяет не ломая дизайн кода использовать несколько менеджеров концекста в одной инструкции with
     for line in fin:
         fout.write(line)
+

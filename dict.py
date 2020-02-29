@@ -1,6 +1,7 @@
 import collections
 
 dictionary = {}
+dictionary = {one = 1, **otherDict}
 dict.pop()
 {key: value for key, value in iterable if condition}
 dictionary.items() # выводит список множеств (ключ, значение)
