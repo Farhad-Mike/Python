@@ -127,3 +127,8 @@ cursor = db.execute('select * from test order by t1')
 for row in cursor:
     print(row)
 ################################# CREATE SQLITE3 DATABASE (END) ################################# 
+
+################################# CREATE SQLITE3 DATABASE (START) #################################
+class ShowAttr:
+    def __getattr__(self, char):
+        print(char)

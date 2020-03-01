@@ -10,3 +10,4 @@ sys.platform # content the platform name
 sys.modules # Return dict contained keys == moduleName, values == <module moduleName>
 sys.getrecursionlimit() # Узнать ограничение на глубину возможных рекурсивных вызовов
 sys.setrecursionlimit(int) # Изменить ограничение на глубину возможных рекурсивных вызовов
+sys.version_info # Retur Python version wicth is now installed on pc
