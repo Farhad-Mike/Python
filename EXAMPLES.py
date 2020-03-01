@@ -128,7 +128,25 @@ for row in cursor:
     print(row)
 ################################# CREATE SQLITE3 DATABASE (END) ################################# 
 
-################################# CREATE SQLITE3 DATABASE (START) #################################
-class ShowAttr:
-    def __getattr__(self, char):
-        print(char)
+################################# CREATE SORTING CLASS (END) ################################# 
+class SortKey:
+    def __init__(self, *attribute_names):
+        self.attribute_names = attribute_names
+    def __call__(self, instance):
+        values = []
+        for attribute_name in self.attribute_names:
+            values.append(getattr(instance, attribute_name))
+        return values
+
+class Person():
+    def __init__(self, name, surname, email):
+        self.name = name
+        self.surname = surname
+        self.email = email
+    
+FARHAD = Person('Farhad', 'Mike', 'fraksimike@gmail.com')
+AYTEN = Person('Ayten', 'Mike', 'aytenmike@gmail.com')
+LISA = Person('Lisa', 'Mike', 'lisamike@gmail.com')
+person = [FARHAD, AYTEN, LISA]
+person.sort(key=SortKey('name'))
+################################# CREATE SORTING CLASS (END) ################################# 
