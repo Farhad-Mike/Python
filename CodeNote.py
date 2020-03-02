@@ -402,3 +402,6 @@ with contextlib.nested(open(filename), open(newfile, 'w')) as (fin, fout): # Б�
     for line in fin:
         fout.write(line)
 
+
+@Util.delegate("__list", ("pop", "__delitem__", "__getitem__", "__iter__", "__reversed__", "__len__", "__str__")) # Теперь для self.__list можно использовать эти функции как и в list(). Используется чтобы не переписывать стандартные методы вручную
+class SortedList:
