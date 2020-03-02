@@ -398,7 +398,5 @@ try:
 except(Error) as err:
     doSomething(err)    
 
-with contextlib.nested(open(filename), open(newfile, 'w')) as (fin, fout): # Библеотека позволяет не ломая дизайн кода использовать несколько менеджеров концекста в одной инструкции with
-    for line in fin:
-        fout.write(line)
+
 

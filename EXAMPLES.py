@@ -150,3 +150,9 @@ LISA = Person('Lisa', 'Mike', 'lisamike@gmail.com')
 person = [FARHAD, AYTEN, LISA]
 person.sort(key=SortKey('name'))
 ################################# CREATE SORTING CLASS (END) ################################# 
+
+################################# CONTEXT MANAGER (START) ################################# 
+with contextlib.nested(open(filename), open(newfile, 'w')) as (fin, fout): # Библеотека позволяет не ломая дизайн кода использовать несколько менеджеров концекста в одной инструкции with
+    for line in fin:
+        fout.write(line)
+################################# CONTEXT MANAGER (END) ################################# 
