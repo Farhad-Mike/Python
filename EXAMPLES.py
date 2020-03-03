@@ -156,3 +156,24 @@ with contextlib.nested(open(filename), open(newfile, 'w')) as (fin, fout): # Ð‘Ð
     for line in fin:
         fout.write(line)
 ################################# CONTEXT MANAGER (END) ################################# 
+
+################################# CREATE ABC (START) ################################# 
+class Template(abc.ABC):
+    @abc.abstractmethod
+    def len(self):
+        print('I have started count sequence!')
+
+    def scream(self):
+        print('I am scream')
+
+class Sequence(Template):
+    def __init__(self, *arr):
+        self.__arr = arr
+    
+    def len(self):
+        super().len()
+        return print(len(self.__arr))
+arr = Sequence(1, 2, 3, 4)
+arr.len()
+arr.scream()
+################################# CREATE ABC (END) ################################# 
