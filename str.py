@@ -88,5 +88,5 @@ elem not in tuple # return True or False
 \ooo	# 8-ричное значение символа
 \0	# Символ Null (не является признаком конца строки)
 
-str(value) #String();
+str(value) #String(); Convert to string
 'Hello' 'World' # 'HelloWold'; not work with variables
