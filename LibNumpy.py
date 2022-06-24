@@ -7,8 +7,8 @@ np_height = numpy.array(height)
 np_weight = numpy.array(weight)
 bmi = np_weight / np_height ** 2
 
-# For a boolean response
-print(bmi > 23)
+# Compare and convert to boolean every element
+bmi > 23
 
 # Print only those observations above 23
-print(bmi[bmi > 23])
+bmi[bmi > 23]
