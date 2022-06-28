@@ -182,3 +182,66 @@ def lottery():
     yield random.randint(1, 15)
 for random_number in lottery():
        print("And the next number is... %d!" %(random_number))
+
+# List comprehension
+sentence = "the quick brown fox jumps over the lazy dog"
+words = sentence.split()
+word_lengths = [len(word) for word in words if word != "the"]
+print(words)
+print(word_lengths)
+
+# Lambda function (anonymous function). Lambda functions, are inline functions defined at the same place we use it.
+a = 1
+b = 2
+sum = lambda x,y : (x + y)
+c = sum(a,b)
+print(c)
+
+# Function wth multiple arguments (list)
+def foo(first, second, third, *therest):
+    print("First: %s" %(first))
+    print("Second: %s" %(second))
+    print("Third: %s" %(third))
+    print("And all the rest... %s" %(list(therest)))
+foo(1, 2, 3, 4, 5)
+
+# Get key of dictionary
+phonebook.get('Farhad') # Return value for key 'Farhad'
+
+# Function wth multiple arguments (dictionary)
+def bar(first, second, third, **options):
+    pass
+bar(1, 2, 3, action = "sum", number = "first")
+
+# Catch error
+try:
+    pass
+except IndexError as errorVariable:
+    pass
+
+# Sets are lists with no duplicate entries
+setVar = set([1, 2, 3, 4, 5, 5, 4, 3, 2, 1])
+setVar = {1, 2, 3, 4, 5, 5, 4, 3, 2, 1}
+
+# Set intersection. Find same values in both sets
+a = set(["Jake", "John", "Eric"])
+b = set(["John", "Jill"])
+a.intersection(b)
+b.intersection(a)
+
+# Set symmetric_difference. Find only private values in both sets
+a = set(["Jake", "John", "Eric"])
+b = set(["John", "Jill"])
+print(a.symmetric_difference(b))
+print(b.symmetric_difference(a))
+
+# Set difference. Find private value only of one set
+a = set(["Jake", "John", "Eric"])
+b = set(["John", "Jill"])
+print(a.difference(b))
+print(b.difference(a))
+
+# Set union. Compinate sets
+a = set(["Jake", "John", "Eric"])
+b = set(["John", "Jill"])
+print(a.union(b))
