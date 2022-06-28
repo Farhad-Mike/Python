@@ -1,13 +1,8 @@
-dict = {"country": ["Brazil", "Russia", "India", "China", "South Africa"],
-       "capital": ["Brasilia", "Moscow", "New Dehli", "Beijing", "Pretoria"],
-       "area": [8.516, 17.10, 3.286, 9.597, 1.221],
-       "population": [200.4, 143.5, 1252, 1357, 52.98] }
+from functools import partial
 
-from numpy import array_equiv
-import pandas as pd 
-brics = pd.DataFrame(dict)
-brics.index = [1, 2, 3, 4, 5]
+def multiply(x, y):
+        return x * y
 
-area = brics[['country', 'capital']]
-
-print(brics[1:3])
+# create a new function that multiplies by 2
+dbl = partial(multiply, 2)
+print(dbl(4))
