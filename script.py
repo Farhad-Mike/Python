@@ -1,8 +1,7 @@
-from functools import partial
+from curses.ascii import isdigit
 
-def multiply(x, y):
-        return x * y
 
-# create a new function that multiplies by 2
-dbl = partial(multiply, 2)
-print(dbl(4))
+string = 'hello0'
+
+isdigit()
+

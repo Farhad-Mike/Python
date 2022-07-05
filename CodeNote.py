@@ -189,8 +189,9 @@ sorted(x, reverse=True)
 
 ord(symbol) # Числовое представление символа
 
-raise errorName(args) # get an except, args will be showed
-raise # get active except or empty
+def func():
+    raise errorName(args) # get an except, args will be showed
+    raise # get active except or empty
 
 
 class exceptionName(baseException): pass # create your Class
