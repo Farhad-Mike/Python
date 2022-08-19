@@ -14,19 +14,20 @@ os.path.split() # возвращает кортеж, содержащий 2 эл
 os.path.dirname() # по отдельности получить из функции os.path.split() путь файла 
 os.path.basename() # по отдельности получить из функции os.path.split() имя файла
 os.path.splittext() # имя файла также может быть разбито на две части – имя и расширение
-os.path.join() # принимает произвольное число строк путей и возвращает единый путь, используя платформоза висимый разделитель каталогов.
+os.path.join() # принимает произвольное число строк путей и возвращает единый путь, используя платформозависимый разделитель каталогов.
 os.path.exists() 
 os.path.isdir()
 os.path.getmtime() # когда произошло последнее изменение файла
-os.path.splitext(filename) # Split the extension from a pathname. Returns "(root, ext)"; ext may be empty.
+os.path.splitext(filename) # Split the extension from a pathname. Ret   urns "(root, ext)"; ext may be empty.
 os.access() # может использоваться для определения наличия файла или его доступности для чтения или записи.
 os.stat() # возвращает различные сведения о файле или каталоге, такие как режим доступа, время последнего обращения и размер.
 os.mkdir() # create calatog
-os.makedirs() # создать промежуточные каталоги
+os.makedirs() # создать промежуточные каталоги recursively
 os.rmdir() # remove empty catalogs
 os.removedirs() # удалять деревья каталогов, содержащие только пустые каталоги, – с помощью функции
 os.remove() # файлы или каталоги удалять
-os.rename() # переименовывать файлы или каталоги
+os.rename(oldName, newName) # переименовывать файлы или каталоги
 os.walk(path) # позволяет выполнять итерации по всему дереву каталогов, по очереди извлекая все имена файлов и каталогов. Даже скрытные.
 # Если итерировать os.walk(path) по 3-м аргументам то 1-ый это сам путь который сейчас разбирается, 2-ой какие каталоги (папки) хранятся по этому пути, 3-ий какие фалы хранятся по этому пути
-os.getcwd() # Return path to directory from which application is running
+os.popen(filePath)  # Open file like open(filePath)
+os.close(filePath)  # Close file like close(filePath). File opened by os.popen(file) can be close use both method (close() and os.close()), but file that opened with open() can opened only by close() function
