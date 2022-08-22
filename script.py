@@ -1,7 +1,16 @@
-from curses.ascii import isdigit
+import tkinter
+from PIL import ImageTk, Image 
 
 
-string = 'hello0'
+win = tkinter.Tk()
+win.title('MyPage')
 
-isdigit()
+bgImage = ImageTk.PhotoImage(Image.open(r'/home/farhad/Pictures/Amulet.png'))
+bgImageLabel = tkinter.Label(image=bgImage)
+bgImageLabel.pack()
 
+button = tkinter.Button(win, text='Submit', command=win.quit)
+button.pack()
+
+
+win.mainloop()
