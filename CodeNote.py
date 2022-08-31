@@ -407,3 +407,10 @@ class SortedList:
 
 isinstance(x, numbers.Integral) # Содержит ABC класс для проверки, является ли обычны объект числом
 isinstance(x, collections.abc.MutableSequence) # Содержит ABC класс для проверки, является ли обычны объект последовательностью
+
+
+
+
+newTimer = Time(50.0, funcName)     # Like setTimeout in JS
+Timer.start()
+Timer.cancel()
