@@ -148,8 +148,11 @@ phonebook.pop('Sarkhan')
 # Import
 import gzip
 import gzip as tvf
+from itertools import filterfalse
 from os import stat
-from os import * 
+from os import *
+from stringprep import in_table_c3
+from Python.LibFunctools import multiply 
 
 # Show all attributes and local methods from obj
 dir(gzip)
@@ -171,3 +174,157 @@ sorted(string1)
 
 # Get of data type
 type(5)
+
+# Tuple
+tup = (1, 2, 3, 4, 5)
+
+# Yield
+import random
+def lottery():
+    # returns 6 numbers between 1 and 40
+    for i in range(6):
+        yield random.randint(1, 40)
+    # returns a 7th number between 1 and 15
+    yield random.randint(1, 15)
+for random_number in lottery():
+       print("And the next number is... %d!" %(random_number))
+
+# List comprehension
+sentence = "the quick brown fox jumps over the lazy dog"
+words = sentence.split()
+word_lengths = [len(word) for word in words if word != "the"]
+print(words)
+print(word_lengths)
+
+# Lambda function (anonymous function). Lambda functions, are inline functions defined at the same place we use it.
+a = 1
+b = 2
+sum = lambda x,y : (x + y)
+c = sum(a,b)
+print(c)
+
+# Function wth multiple arguments (list)
+def foo(first, second, third, *therest):
+    print("First: %s" %(first))
+    print("Second: %s" %(second))
+    print("Third: %s" %(third))
+    print("And all the rest... %s" %(list(therest)))
+foo(1, 2, 3, 4, 5)
+
+# Get key of dictionary
+phonebook.get('Farhad') # Return value for key 'Farhad'
+
+# Function wth multiple arguments (dictionary)
+def bar(first, second, third, **options):
+    pass
+bar(1, 2, 3, action = "sum", number = "first")
+
+# Catch error
+try:
+    pass
+except IndexError as errorVariable:
+    pass
+
+# Sets are lists with no duplicate entries
+setVar = set([1, 2, 3, 4, 5, 5, 4, 3, 2, 1])
+setVar = {1, 2, 3, 4, 5, 5, 4, 3, 2, 1}
+
+# Set intersection. Find same values in both sets
+a = set(["Jake", "John", "Eric"])
+b = set(["John", "Jill"])
+a.intersection(b)
+b.intersection(a)
+
+# Set symmetric_difference. Find only private values in both sets
+a = set(["Jake", "John", "Eric"])
+b = set(["John", "Jill"])
+print(a.symmetric_difference(b))
+print(b.symmetric_difference(a))
+
+# Set difference. Find private value only of one set
+a = set(["Jake", "John", "Eric"])
+b = set(["John", "Jill"])
+print(a.difference(b))
+print(b.difference(a))
+
+# Set union. Compinate sets
+a = set(["Jake", "John", "Eric"])
+b = set(["John", "Jill"])
+print(a.union(b))
+
+# Code Introspection
+help()
+dir() 
+hasattr() 
+id() 
+type() 
+repr() 
+callable() 
+issubclass() 
+isinstance() 
+__doc__ 
+__name__
+
+# Nonlocal
+def function1(num1):
+    pass
+    def function2():
+        nonlocal num1   # nonlocal used for access to modify the variable in enclosing function
+        num1 = 'value'
+    function2()
+
+# Nested function
+def transmit_to_space(message):
+    "This is the enclosing function"
+    def data_transmitter():
+        "The nested function"
+        print(message)
+    return data_transmitter
+returnedFunc = transmit_to_space('Hello')
+
+# Raise error
+def raisError():
+    raise (ValueError, "Negative Argument")
+
+# Decorators
+def multiply(multiplier):
+    def multiply_generator(old_function):
+        def new_function(*args, **kwds):
+            return multiplier * old_function(*args, **kwds)
+        return new_function
+    return multiply_generator # it returns the new generator
+@multiply(3) # multiply is not a generator, but multiply(3) is
+def return_num(num):
+    return num
+# Now return_num is decorated and reassigned into itself
+return_num(5) # should return 15
+
+# Check the same type or not
+isinstance(5, int)
+
+# Round
+round(5.3456, 3)
+
+# Map. map(func, *iterables). The func will executed for every element in list
+'''In Python 3, however, the function returns a map object which is a generator object. To get the result as a list, the built-in list() function can be called on the map object.'''
+'''map(func, [funcArg1], [funcArg2], ...)'''
+my_pets = ['alfred', 'tabitha', 'william', 'arla']
+map(str.upper, my_pets)
+
+# Zip
+'''Функция zip() принимает один или более итерируемых объектов и возвращает итератор, который в свою очередь возвращает кортежи. Первый кортеж включает в себя первые элементы всех итерируемых объектов, второй кортеж – вторые элементы и т. д., итерации прекращаются, как только содержимое любого из итерируемых объектов будет исчерпано.'''
+'''Return zip object which you can convert to another iterable data type for example to list()'''
+it1 = [1, 2, 3, 4, 5, 6]
+it2 = ['a', 'b', 'c', 'd', 'e', 'f']
+zip(it1, it2)
+
+# Filter. Return filter object which can be converted to iterable object. Return only the elements that is return True
+it3 = [1, 2, 3, 4, 5, 6, 7]
+filter(lambda x : x > 2, it3)
+
+
+# Reduce. Needs to be imported as it resides in the functools module.
+'''Передает в функцию два аргумента. Производит работу по функции над аргументами, а результат записывает снова как первый аргумент. Начальный аргумент может быть задан, а может и не быть задан.'''
+from functools import reduce
+it4 = [1, 2, 3, 4, 5, 6, 7]
+reduce(lambda x, y : x + y, it4, 10)

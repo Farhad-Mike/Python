@@ -48,12 +48,12 @@ import builtins # Содержит все встроенные функции bu
 import contextlib # 
 
 
+ 
 
 
 
 
-
-
+  
 
 
 
@@ -189,8 +189,9 @@ sorted(x, reverse=True)
 
 ord(symbol) # Числовое представление символа
 
-raise errorName(args) # get an except, args will be showed
-raise # get active except or empty
+def func():
+    raise errorName(args) # get an except, args will be showed
+    raise # get active except or empty
 
 
 class exceptionName(baseException): pass # create your Class
@@ -406,3 +407,10 @@ class SortedList:
 
 isinstance(x, numbers.Integral) # Содержит ABC класс для проверки, является ли обычны объект числом
 isinstance(x, collections.abc.MutableSequence) # Содержит ABC класс для проверки, является ли обычны объект последовательностью
+
+
+
+
+newTimer = Time(50.0, funcName)     # Like setTimeout in JS
+Timer.start()
+Timer.cancel()
