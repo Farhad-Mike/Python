@@ -1,14 +1,27 @@
-import numpy
+bookmarks = open(r'D:\bookmarks.txt')
 
-# Может делать арифметические вычисления последовательно с каждым элементов списка
-height = [1.87,  1.87, 1.82, 1.91, 1.90, 1.85]
-weight = [81.65, 97.52, 95.25, 92.98, 86.18, 88.45]
-np_height = numpy.array(height)
-np_weight = numpy.array(weight)
-bmi = np_weight / np_height ** 2
+newBookmarks = []
 
-# For a boolean response
-print(bmi > 23)
+completedBookmarks = []
 
-# Print only those observations above 23
-print(bmi[bmi > 23])
+for bookmark in bookmarks:
+    if bookmark.find('torrents-igruha.org') != -1:
+        newBookmarks.append(bookmark)
+
+
+for bookmark in newBookmarks:
+    position = bookmark.find('torrents-igruha.org')
+    completedBookmarks.append('https://' + bookmark[position:])
+
+print(completedBookmarks)
+
+newFile = open(r'D:\newBookmarks.txt', 'w')
+newFile.write('')
+newFile.close()
+newFile = open(r'D:\newBookmarks.txt', 'a')
+
+for _ in completedBookmarks:
+    newFile.write(_)
+
+
+newFile.close()
