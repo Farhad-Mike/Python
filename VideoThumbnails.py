@@ -27,7 +27,7 @@ def export_thumbnails():
             fps = cap.get(cv2.CAP_PROP_FPS)
             
             # Calculate the interval in terms of frames
-            interval_frames = int(fps) * 5
+            interval_frames = int(fps) * 30
             
             # Extract the video file name without extension
             video_name = os.path.splitext(os.path.basename(video_file))[0]
